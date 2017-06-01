@@ -188,7 +188,6 @@ class BingoWaveRefreshView: UIView {
         }
         _amplitude = _variable * CGFloat( _times)
         _height = BingoWaveRefreshViewData.maxVariable * CGFloat( _times)
-        print(_height)
     }
     /// 刷新偏移量
     func configWaveOffset() -> Void {
