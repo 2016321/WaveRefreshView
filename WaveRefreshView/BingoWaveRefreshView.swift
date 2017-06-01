@@ -225,13 +225,13 @@ class BingoWaveRefreshView: UIView {
         guard let scrollView = scrollView else {
             return
         }
-        let path = CGMutablePath()
         var y = _offsetY
+        let path = CGMutablePath()
         path.move(to: CGPoint(x: 0, y: y))
-        let forward = CGFloat(M_PI) / (_cycle * 2.0)
+        let forward = CGFloat(M_PI) / (_cycle * 4.0)
         let waveWidth : CGFloat = scrollView.frame.size.width
         for x in 0...Int(waveWidth) {
-            y = _amplitude * cos(_cycle * CGFloat(x) + _offsetX - forward) + _offsetY
+            y = _amplitude * cos(_cycle * CGFloat(x) + _offsetX  + forward) + _offsetY
             path.addLine(to: CGPoint(x: CGFloat(x), y: y))
         }
         path.addLine(to: CGPoint(x: waveWidth, y: self.frame.size.height))
